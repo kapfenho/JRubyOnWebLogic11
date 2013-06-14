@@ -1,0 +1,18 @@
+Sample JRuby application with Ruby On Rails framework, ready to be deployed on Oracle WebLogic 11gR2 server.
+
+
+Changes:
+--------
+- Oracle JDBC driver
+    see evironment initializers for loading JDBC driver package in DEV and TEST
+
+- Rake and JDBC: set environment var: 
+    rake db:migrate SKIP_AR_JDBC_RAKE_REDEFINES=1
+    https://github.com/jruby/jruby/wiki/FAQs#-why-does-my-dbmigrate-fail-with-undefined-method-create_database-for-class-class01x1e30857
+
+- create data source in WebLogic and fetch it by JNDI lookup
+
+- some special settings in weblogic.xml for class loading order
+
+- precompilation of web assets necessary
+
